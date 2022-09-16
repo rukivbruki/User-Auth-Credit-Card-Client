@@ -1,6 +1,6 @@
 Launch by ```npm run dev``` command.
 
-Attention, the ```.env``` file is required for the fake API to work and placed in the repository intentionally (don't do this in real projects).
+**Attention, the ```.env``` file is required for the fake API to work and placed in the repository intentionally (don't do this in real projects).**
 
 Functionality:
 

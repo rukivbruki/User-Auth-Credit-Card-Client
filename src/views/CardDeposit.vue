@@ -11,9 +11,9 @@ const alertStore = useAlertStore();
 const { user } = storeToRefs(authStore);
 
 async function onSubmit(e) {
-  const values = formValues(e);
+  const cardData = formValues(e);
 
-  await usersStore.update(user.value.id, values);
+  await usersStore.update(user.value.id, { cardData });
   console.log(formValues(e, 4));
   formValues(e, 4, true);
   try {
@@ -38,7 +38,7 @@ async function onSubmit(e) {
                 name="name"
                 id="name"
                 placeholder="UKSI CAT"
-                :value="user?.name"
+                :value="user?.cardData?.name"
                 v-auto-focus
                 required
               />
@@ -53,7 +53,7 @@ async function onSubmit(e) {
                 name="mm"
                 id="mm"
                 placeholder="10"
-                :value="user?.mm"
+                :value="user?.cardData?.mm"
                 required
               />
             </div>
@@ -67,7 +67,7 @@ async function onSubmit(e) {
                 name="yy"
                 id="yy"
                 placeholder="2027"
-                :value="user?.yy"
+                :value="user?.cardData?.yy"
                 required
               />
             </div>
@@ -78,7 +78,7 @@ async function onSubmit(e) {
                 name="cardNumber"
                 id="cardNumber"
                 placeholder="1111 1111 1111 1111"
-                :value="user?.cardNumber"
+                :value="user?.cardData?.cardNumber"
                 required
               />
             </div>

@@ -6,7 +6,7 @@ import { useAlertStore } from '@/stores';
 const alertStore = useAlertStore();
 const { alert } = storeToRefs(alertStore);
 
-const clear = () => setTimeout(() => alertStore.clear(), 5000);
+const clear = () => setTimeout(() => alertStore.clear(), 3000);
 </script>
 
 <template>

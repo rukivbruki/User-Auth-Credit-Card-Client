@@ -1,5 +1,4 @@
 import { UsersLayout, UsersList, UsersEditing } from '@/views/users';
-
 export default {
   path: '/users',
   component: UsersLayout,

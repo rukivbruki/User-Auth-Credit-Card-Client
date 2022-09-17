@@ -1,6 +1,5 @@
 :root {
   --whiteDarkenPrecentage: 20%;
-
   --mainWhiteColor-h: 0;
   --mainWhiteColor-s: 0%;
   --mainWhiteColor-l: 100%;
@@ -10,9 +9,7 @@
     var(--mainWhiteColor-s),
     calc(var(--mainWhiteColor-l) - var(--whiteDarkenPrecentage))
   );
-
   --blackLightenPrecentage: 25%;
-
   --mainBlackColor-h: 0;
   --mainBlackColor-s: 0%;
   --mainBlackColor-l: 0%;
@@ -22,10 +19,8 @@
     var(--mainBlackColor-s),
     calc(var(--mainBlackColor-l) + var(--blackLightenPrecentage))
   );
-
   --interactiveLightenPercentage: 5%;
   --interactiveDarkenPrecentage: 5%;
-
   --mainInteractiveColor-h: 328;
   --mainInteractiveColor-s: 100%;
   --mainInteractiveColor-l: 23%;
@@ -39,9 +34,7 @@
     var(--mainInteractiveColor-s),
     calc(var(--mainInteractiveColor-l) - var(--interactiveDarkenPrecentage))
   );
-
   --linkDarkenPrecentage: 48%;
-
   --mainLinkColor-h: 0;
   --mainLinkColor-s: 0%;
   --mainLinkColor-l: 52%;
@@ -52,27 +45,22 @@
     calc(var(--mainLinkColor-l) - var(--linkDarkenPrecentage))
   );
 }
-
 * {
   font-family: Verdana, Helvetica, sans-serif;
 }
-
 .app-container {
   min-height: 350px;
 }
-
 .layout-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .form-container {
   padding: 20px;
   border-radius: 5px;
   background-color: var(--mainWhiteColor);
 }
-
 .login-container,
 .register-container,
 .add-container,
@@ -82,7 +70,6 @@
   max-width: 600px;
   flex-direction: column;
 }
-
 .router-link {
   display: inline-block;
   padding: 14px 25px;
@@ -92,16 +79,13 @@
   border: solid 1px var(--mainLinkColor);
   color: var(--mainLinkColor);
 }
-
 .router-link:hover {
   color: var(--mainLinkColor--dark);
   border: solid 1px var(--mainLinkColor--dark);
 }
-
 label {
   color: var(--mainBlackColor);
 }
-
 input {
   display: inline-block;
   box-sizing: border-box;
@@ -112,11 +96,9 @@ input {
   border-radius: 4px;
   color: var(--mainBlackColor);
 }
-
 input:invalid {
   border: 1px solid var(--mainInteractiveColor);
 }
-
 button[type='submit'] {
   width: 100%;
   padding: 14px 20px;
@@ -127,34 +109,27 @@ button[type='submit'] {
   background-color: var(--mainInteractiveColor);
   color: var(--mainWhiteColor);
 }
-
 button[type='submit']:hover {
   background-color: var(--mainInteractiveColor--dark);
 }
-
 tr {
   text-align: left;
 }
-
 td {
   height: 20px;
   vertical-align: bottom;
 }
-
 table {
   width: 100%;
 }
-
 td,
 th {
   border: 1px solid var(--mainBlackColor--white);
   padding: 8px;
 }
-
 tr:nth-child(even) {
   background-color: var(--mainWhiteColor);
 }
-
 th {
   text-align: left;
   padding-top: 12px;

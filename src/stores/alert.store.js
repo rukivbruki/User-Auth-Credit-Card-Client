@@ -2,9 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useAlertStore = defineStore({
   id: 'alert',
-  state: () => ({
-    alert: null,
-  }),
+  state: () => ({ alert: null }),
   actions: {
     success(message) {
       this.alert = { message, type: 'alert-success' };

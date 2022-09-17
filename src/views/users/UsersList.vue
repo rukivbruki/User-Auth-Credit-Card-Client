@@ -74,7 +74,6 @@ td button {
   border-radius: 5px;
   background-color: var(--mainInteractiveColor);
   color: var(--mainWhiteColor);
-
 }
 
 td button:hover {

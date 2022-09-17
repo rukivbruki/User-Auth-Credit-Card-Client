@@ -9,10 +9,7 @@ export const fetchWrapper = {
 
 function request(method) {
   return (url, body) => {
-    const requestOptions = {
-      method,
-      headers: authHeader(url),
-    };
+    const requestOptions = { method, headers: authHeader(url) };
 
     if (body) {
       requestOptions.headers['Content-Type'] = 'application/json';
@@ -29,7 +26,9 @@ function authHeader(url) {
   const isApiUrl = url.startsWith(import.meta.env.VITE_API_URL);
 
   if (isLoggedIn && isApiUrl) {
-    return { Authorization: `Bearer ${user.token}` };
+    return {
+      Authorization: `Bearer ${user.token}`,
+    };
   } else {
     return {};
   }
@@ -50,6 +49,5 @@ async function handleResponse(response) {
 
     return Promise.reject(error);
   }
-
   return data;
 }

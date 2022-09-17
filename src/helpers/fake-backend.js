@@ -1,3 +1,4 @@
+import { replacer } from '@/helpers';
 export { fakeBackend };
 
 const usersKey = 'Vue-registration-CRUD-App';
@@ -24,7 +25,6 @@ function fakeBackend() {
           case url.match(/\/users\/\d+$/) && opts.method === 'DELETE':
             return deleteUser();
           default:
-
             return realFetch(url, opts)
               .then((response) => resolve(response))
               .catch((error) => reject(error));
@@ -52,7 +52,7 @@ function fakeBackend() {
 
         user.id = users.length ? Math.max(...users.map((x) => x.id)) + 1 : 1;
         users.push(user);
-        localStorage.setItem(usersKey, JSON.stringify(users));
+        localStorage.setItem(usersKey, JSON.stringify(users, replacer));
 
         return ok();
       }
@@ -92,7 +92,7 @@ function fakeBackend() {
         }
 
         Object.assign(user, params);
-        localStorage.setItem(usersKey, JSON.stringify(users));
+        localStorage.setItem(usersKey, JSON.stringify(users, replacer));
 
         return ok();
       }

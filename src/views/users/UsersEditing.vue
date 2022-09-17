@@ -23,7 +23,6 @@ if (id) {
 
 async function onSubmit(e) {
   const values = formValues(e);
-
   try {
     let message;
 

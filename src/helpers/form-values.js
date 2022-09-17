@@ -3,6 +3,7 @@ export const formValues = (e, numberElements = 3, isCleared = false) => {
 
   for (let i = 0; i <= numberElements; i++) {
     const element = e.target.elements[i];
+
     if (!isCleared) {
       values[element.name] = element.value;
     } else {

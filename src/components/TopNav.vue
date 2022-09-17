@@ -21,10 +21,10 @@ const authStore = useAuthStore();
 <style scoped>
 nav {
   list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--mainBlackColor--white);
 }
 
 .nav-element {
@@ -33,19 +33,23 @@ nav {
 
 .nav-element > *:first-child {
   display: block;
-  color: white;
-  text-align: center;
   padding: 14px 16px;
-  background: #111;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
+  background: var(--mainBlackColor);
+  color: var(--mainWhiteColor);
 }
 
 .nav-element > *:first-child.active {
-  background-color: #75003f;
+  background-color: var(--mainInteractiveColor);
+}
+.nav-element > *:first-child.active:hover {
+  background-color: var(--mainInteractiveColor--dark);
 }
 
 .nav-element > *:first-child:hover:not(.active) {
-  background-color: #393939;
+  background-color: var(--mainWhiteColor--dark);
+  color: var(--mainBlackColor);
 }
 </style>

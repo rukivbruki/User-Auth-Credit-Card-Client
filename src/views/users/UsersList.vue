@@ -68,15 +68,16 @@ td a {
 }
 
 td button {
-  color: #ffffff;
+  padding: 2px 8px;
   cursor: pointer;
-  background-color: #75003f;
   border: none;
   border-radius: 5px;
-  padding: 2px 8px;
+  background-color: var(--mainInteractiveColor);
+  color: var(--mainWhiteColor);
+
 }
 
 td button:hover {
-  background-color: #630036;
+  background-color: var(--mainInteractiveColor--dark);
 }
 </style>

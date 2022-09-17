@@ -3,6 +3,7 @@ import { storeToRefs } from 'pinia';
 
 import { useAlertStore, useAuthStore, useUsersStore } from '@/stores';
 import { formValues } from '@/helpers';
+import { autoFocus as vAutoFocus } from '@/directives';
 
 const authStore = useAuthStore();
 const usersStore = useUsersStore();
@@ -32,7 +33,15 @@ async function onSubmit(e) {
           <div class="input-container">
             <div class="input-element">
               <label for="name">Name</label>
-              <input type="text" name="name" id="name" placeholder="UKSI CAT" :value="user?.name" required autofocus />
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="UKSI CAT"
+                :value="user?.name"
+                v-auto-focus
+                required
+              />
             </div>
             <div class="input-element">
               <label for="mm">Expiration month</label>
@@ -103,8 +112,8 @@ input {
 
 .input-element {
   display: flex;
-  flex-wrap: wrap;
   width: 250px;
+  flex-wrap: wrap;
 }
 
 input[name='name'],

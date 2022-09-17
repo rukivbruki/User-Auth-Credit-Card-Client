@@ -2,12 +2,12 @@
 import { useAlertStore, useUsersStore } from '@/stores';
 import { router } from '@/router';
 import { formValues } from '@/helpers';
+import { autoFocus as vAutoFocus } from '@/directives';
 
 async function onSubmit(e) {
   const usersStore = useUsersStore();
   const alertStore = useAlertStore();
   const values = formValues(e);
-
   try {
     await usersStore.register(values);
     await router.push('/account/login');
@@ -24,7 +24,7 @@ async function onSubmit(e) {
     <div class="form-container">
       <form @submit.prevent="onSubmit">
         <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" autofocus />
+        <input type="text" id="firstName" name="firstName" v-auto-focus />
         <label for="lastName">Last Name</label>
         <input type="text" id="lastName" name="lastName" />
         <label for="username">Username</label>

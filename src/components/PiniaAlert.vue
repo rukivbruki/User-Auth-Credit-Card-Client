@@ -32,12 +32,12 @@ const clear = () => setTimeout(() => alertStore.clear(), 5000);
 }
 
 .alert-danger {
-  background-color: #ffdddd;
   border-left: 6px solid #f44336;
+  background-color: #ffdddd;
 }
 
 .alert-success {
-  background-color: #ddffdd;
   border-left: 6px solid #04aa6d;
+  background-color: #ddffdd;
 }
 </style>

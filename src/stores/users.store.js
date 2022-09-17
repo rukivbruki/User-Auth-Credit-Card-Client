@@ -35,22 +35,21 @@ export const useUsersStore = defineStore({
       await fetchWrapper.put(`${baseUrl}/${id}`, params);
 
       const authStore = useAuthStore();
+
       if (id === authStore.user.id) {
-
         const user = { ...authStore.user, ...params };
-        localStorage.setItem('user', JSON.stringify(user));
-
         authStore.user = user;
+
+        localStorage.setItem('user', JSON.stringify(user));
       }
     },
     async delete(id) {
       this.users.find((x) => x.id === id).isDeleting = true;
-
       await fetchWrapper.delete(`${baseUrl}/${id}`);
 
       this.users = this.users.filter((x) => x.id !== id);
-
       const authStore = useAuthStore();
+
       if (id === authStore.user.id) {
         authStore.logout();
       }

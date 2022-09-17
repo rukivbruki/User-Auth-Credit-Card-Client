@@ -1,8 +1,60 @@
 :root {
-  --main-white: #ffffff;
-  --main-black: #000000;
-  --important-interactive: #75003f;
-  --important-interactive-hover: #630036;
+  --whiteDarkenPrecentage: 20%;
+
+  --mainWhiteColor-h: 0;
+  --mainWhiteColor-s: 0%;
+  --mainWhiteColor-l: 100%;
+  --mainWhiteColor: hsl(var(--mainWhiteColor-h), var(--mainWhiteColor-s), var(--mainWhiteColor-l));
+  --mainWhiteColor--dark: hsl(
+    var(--mainWhiteColor-h),
+    var(--mainWhiteColor-s),
+    calc(var(--mainWhiteColor-l) - var(--whiteDarkenPrecentage))
+  );
+
+  --blackLightenPrecentage: 25%;
+
+  --mainBlackColor-h: 0;
+  --mainBlackColor-s: 0%;
+  --mainBlackColor-l: 0%;
+  --mainBlackColor: hsl(var(--mainBlackColor-h), var(--mainBlackColor-s), var(--mainBlackColor-l));
+  --mainBlackColor--white: hsl(
+    var(--mainBlackColor-h),
+    var(--mainBlackColor-s),
+    calc(var(--mainBlackColor-l) + var(--blackLightenPrecentage))
+  );
+
+  --interactiveLightenPercentage: 5%;
+  --interactiveDarkenPrecentage: 5%;
+
+  --mainInteractiveColor-h: 328;
+  --mainInteractiveColor-s: 100%;
+  --mainInteractiveColor-l: 23%;
+  --mainInteractiveColor: hsl(
+    var(--mainInteractiveColor-h),
+    var(--mainInteractiveColor-s),
+    var(--mainInteractiveColor-l)
+  );
+  --mainInteractiveColor--dark: hsl(
+    var(--mainInteractiveColor-h),
+    var(--mainInteractiveColor-s),
+    calc(var(--mainInteractiveColor-l) - var(--interactiveDarkenPrecentage))
+  );
+
+  --linkDarkenPrecentage: 48%;
+
+  --mainLinkColor-h: 0;
+  --mainLinkColor-s: 0%;
+  --mainLinkColor-l: 52%;
+  --mainLinkColor: hsl(var(--mainLinkColor-h), var(--mainLinkColor-s), var(--mainLinkColor-l));
+  --mainLinkColor--dark: hsl(
+    var(--mainLinkColor-h),
+    var(--mainLinkColor-s),
+    calc(var(--mainLinkColor-l) - var(--linkDarkenPrecentage))
+  );
+}
+
+* {
+  font-family: Verdana, Helvetica, sans-serif;
 }
 
 .app-container {
@@ -11,14 +63,14 @@
 
 .layout-container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .form-container {
-  border-radius: 5px;
-  background-color: var(--main-white);
   padding: 20px;
+  border-radius: 5px;
+  background-color: var(--mainWhiteColor);
 }
 
 .login-container,
@@ -27,57 +79,57 @@
 .home-container,
 .deposit-container {
   display: flex;
-  flex-direction: column;
   max-width: 600px;
+  flex-direction: column;
 }
 
 .router-link {
   display: inline-block;
-  color: #848484;
   padding: 14px 25px;
   margin: 8px 0;
   text-align: center;
-  border: solid 1px #c6c6c6;
   text-decoration: none;
+  border: solid 1px var(--mainLinkColor);
+  color: var(--mainLinkColor);
 }
 
 .router-link:hover {
-  color: var(--main-black);
-  border: solid 1px #848484;
+  color: var(--mainLinkColor--dark);
+  border: solid 1px var(--mainLinkColor--dark);
 }
 
 label {
-  color: var(--main-black);
+  color: var(--mainBlackColor);
 }
 
 input {
+  display: inline-block;
+  box-sizing: border-box;
   width: 100%;
-  color: var(--main-black);
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--mainWhiteColor--dark);
   border-radius: 4px;
-  box-sizing: border-box;
+  color: var(--mainBlackColor);
 }
 
 input:invalid {
-  border: 1px solid #760000;
+  border: 1px solid var(--mainInteractiveColor);
 }
 
 button[type='submit'] {
   width: 100%;
-  background-color: var(--important-interactive);
-  color: var(--main-white);
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  background-color: var(--mainInteractiveColor);
+  color: var(--mainWhiteColor);
 }
 
 button[type='submit']:hover {
-  background-color: var(--important-interactive-hover);
+  background-color: var(--mainInteractiveColor--dark);
 }
 
 tr {
@@ -90,25 +142,23 @@ td {
 }
 
 table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
   width: 100%;
 }
 
 td,
 th {
-  border: 1px solid #ddd;
+  border: 1px solid var(--mainBlackColor--white);
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: var(--main-white);
+  background-color: var(--mainWhiteColor);
 }
 
 th {
+  text-align: left;
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
-  background-color: #ccc;
-  color: var(--main-white);
+  background-color: var(--mainWhiteColor--dark);
+  color: var(--mainWhiteColor);
 }

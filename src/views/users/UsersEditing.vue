@@ -5,6 +5,7 @@ import { storeToRefs } from 'pinia';
 import { useAlertStore, useUsersStore } from '@/stores';
 import { router } from '@/router';
 import { formValues } from '@/helpers';
+import { autoFocus as vAutoFocus } from '@/directives';
 
 const usersStore = useUsersStore();
 const alertStore = useAlertStore();
@@ -25,6 +26,7 @@ async function onSubmit(e) {
 
   try {
     let message;
+
     if (user) {
       await usersStore.update(user.value.id, values);
       message = 'User updated';
@@ -32,6 +34,7 @@ async function onSubmit(e) {
       await usersStore.register(values);
       message = 'User added';
     }
+
     await router.push('/users');
     alertStore.success(message);
   } catch (error) {
@@ -47,7 +50,7 @@ async function onSubmit(e) {
       <div class="form-container">
         <form @submit.prevent="onSubmit">
           <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" :value="user?.firstName" required autofocus />
+          <input type="text" id="firstName" name="firstName" :value="user?.firstName" v-auto-focus required />
           <label for="lastName">Last Name</label>
           <input type="text" id="lastName" name="lastName" :value="user?.lastName" required />
           <label for="username">Username</label>

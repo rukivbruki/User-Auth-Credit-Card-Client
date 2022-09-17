@@ -74,10 +74,11 @@ async function onSubmit(e) {
             <div class="input-element">
               <label for="cardNumber">Card number</label>
               <input
-                type="number"
+                type="text"
+                pattern="([0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4})"
+                placeholder='1234 5678 1234 5678'
                 name="cardNumber"
                 id="cardNumber"
-                placeholder="1111 1111 1111 1111"
                 :value="user?.cardData?.cardNumber"
                 required
               />

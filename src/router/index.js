@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthStore, useAlertStore } from '@/stores';
 import { CardDeposit } from '@/views';
-import accountRoutes from './account.routes';
-import usersRoutes from './users.routes';
+import accountRoutes from './accountRoutes';
+import usersRoutes from './usersRoutes';
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: 'active',

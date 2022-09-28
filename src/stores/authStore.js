@@ -14,7 +14,6 @@ export const useAuthStore = defineStore({
       try {
         const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { username, password });
         this.user = user;
-
         localStorage.setItem('user', JSON.stringify(user));
         await router.push(this.returnUrl || '/');
       } catch (error) {

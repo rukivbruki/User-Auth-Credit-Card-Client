@@ -4,7 +4,7 @@ export const fetchWrapper = {
   get: request('GET'),
   post: request('POST'),
   put: request('PUT'),
-  delete: request('DELETE'),
+  delete: request('DELETE')
 };
 
 function request(method) {
@@ -27,7 +27,7 @@ function authHeader(url) {
 
   if (isLoggedIn && isApiUrl) {
     return {
-      Authorization: `Bearer ${user.token}`,
+      Authorization: `Bearer ${user.token}`
     };
   } else {
     return {};
@@ -49,5 +49,6 @@ async function handleResponse(response) {
 
     return Promise.reject(error);
   }
+
   return data;
 }

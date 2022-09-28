@@ -3,6 +3,8 @@ Launch by `npm run dev` command.
 **Attention, the `.env` file is required for the fake API to work and placed in the
 repository intentionally (don't do this in real projects).** 
 
+You can launch this project either with a fake backend or witan an actual backend located [here](https://github.com/rukivbruki/Node-registration-CRUD_API.git)
+
 Functionality:
 1. User registration.
 2. Authorization of the user through a fake API with the issuance of a fake jwt token. 

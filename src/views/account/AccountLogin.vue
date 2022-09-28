@@ -21,7 +21,7 @@ async function onSubmit() {
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required />
         <button type="submit" value="Login">Login</button>
-        <router-link class="router-link" to="register">Register</router-link>
+        <router-link class="router-link" :to="{ name: 'register' }">Register</router-link>
       </form>
     </div>
   </div>

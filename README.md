@@ -3,7 +3,7 @@ Launch by `npm run dev` command.
 **Attention, the `.env` file is required for the fake API to work and placed in the
 repository intentionally (don't do this in real projects).** 
 
-You can launch this project either with a fake backend or witan an actual backend located [here](https://github.com/rukivbruki/NodeJS-User-Auth-Management)
+You can launch this project either with a fake backend or witan an actual backend located [here](https://github.com/rukivbruki/User-Auth-Credit-Card-Server)
 
 Functionality:
 1. User registration.
